@@ -12,4 +12,15 @@ public class Entity<TId>
     public DateTime CreatedDate { get; set; } // Bir nesne oluştuduğunda CreatedDate olmalıdır. Bu yüzden nullable yapmıyoruz.
     public DateTime? UpddatedDate { get; set; } // Bir nesne oluştuduğunda UpddatedDate olmaz bu yüzden nullable olabilir.
     public DateTime? DeletedDate { get; set; } // Bir nesne oluştuduğunda DeletedDate olmaz bu yüzden nullable olabilir.
+   
+
+    public Entity()
+    {
+        Id = default; // Eğer Id için bir değer verilmezse default değeri alıyoruz. Örn: int iste 0 değerinni verir.
+            
+    }
+    public Entity(TId id)
+    {
+        Id = id;
+    }
 }
